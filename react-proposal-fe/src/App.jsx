@@ -1,6 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import { Box, CssBaseline, ThemeProvider, Container } from "@mui/material";
+import {
+  Box,
+  CssBaseline,
+  ThemeProvider,
+  Container,
+  Avatar,
+} from "@mui/material";
 import { mdTheme } from "./theme";
 import { Navbar } from "./components/sections/Navbar";
 import { Drawer } from "./components/sections/Drawer";
@@ -18,6 +24,7 @@ import List from "@mui/material/List";
 import { Routes, Route } from "react-router-dom";
 import WebProposal from "./components/WebProposal";
 import Dashboard from "./components/Dashboard";
+import logo from "./assets/logo.png";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -72,10 +79,22 @@ function App() {
             sx={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "flex-end",
+              justifyContent: "space-between",
               px: [1],
             }}
           >
+            <Avatar alt="brand logo" src={logo} />
+            <Typography
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              component={"h1"}
+              variant={"h6"}
+            >
+              PLIL
+            </Typography>
             <IconButton onClick={toggleDrawer}>
               <ChevronLeftIcon />
             </IconButton>
