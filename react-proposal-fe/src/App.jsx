@@ -4,7 +4,6 @@ import {
   Box,
   CssBaseline,
   ThemeProvider,
-  Container,
   Avatar,
 } from "@mui/material";
 import { mdTheme } from "./theme";
@@ -25,6 +24,7 @@ import { Routes, Route } from "react-router-dom";
 import WebProposal from "./components/WebProposal";
 import Dashboard from "./components/Dashboard";
 import logo from "./assets/logo.png";
+import Verification from "./components/Verification";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -129,6 +129,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/proposals" element={<WebProposal />} />
+            <Route path="/ec-verification" element={<Verification />} />
           </Routes>
         </Box>
       </Box>
