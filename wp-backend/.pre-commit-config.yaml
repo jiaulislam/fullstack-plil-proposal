@@ -1,0 +1,21 @@
+repos:
+-   repo: https://github.com/psf/black
+    rev: 22.12.0
+    hooks:
+    - id: black
+      language_version: python3.11
+-   repo: https://github.com/PyCQA/flake8.git
+    rev: 6.0.0
+    hooks:
+    - id: flake8
+      args: [--config=wp-backend/.flake8]
+-   repo: https://github.com/hadialqattan/pycln
+    rev: v2.1.2
+    hooks:
+    -   id: pycln
+        args: [--config=wp-backend/pyproject.toml]
+-   repo: https://github.com/pycqa/isort
+    rev: 5.11.2
+    hooks:
+    -   id: isort
+        files: "\\.(py)$"

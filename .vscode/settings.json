@@ -1,0 +1,13 @@
+{
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "python.sortImports": true,
+    }
+  },
+  "python.formatting.provider": "black",
+  "isort.args":["--profile", "black"],
+  "python.defaultInterpreterPath": "/home/ubuntu/.cache/pypoetry/virtualenvs/wp-backend-OTdPGE4x-py3.11/bin/python",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+}
