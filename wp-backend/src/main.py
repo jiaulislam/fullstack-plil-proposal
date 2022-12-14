@@ -13,11 +13,15 @@ app = FastAPI(debug=settings.DEVELOPMENT)
 
 @app.get("/")
 def root(db: Session = Depends(get_session)):
-    return {db.execute(sa.text("SELECT * FROM tbl_change_request")).fetchone()}
+    return {
+        "records": db.execute(sa.text("SELECT * FROM tbl_change_request")).fetchmany(
+            100
+        )
+    }
 
 
 def run():
-    uvicorn.run("main:app", host="127.0.0.1", port=8080, reload=settings.DEVELOPMENT)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=settings.DEVELOPMENT)
 
 
 if __name__ == "__main__":
