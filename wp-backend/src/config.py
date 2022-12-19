@@ -4,7 +4,7 @@ from typing import Union
 from pydantic import AnyUrl, BaseSettings, Field, IPvAnyAddress, PositiveInt, StrictStr
 from sqlalchemy.engine import URL
 
-BASE_PATH = Path.cwd()
+BASE_PATH = Path(Path().cwd())
 
 
 class Settings(BaseSettings):

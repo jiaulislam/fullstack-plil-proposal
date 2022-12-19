@@ -1,6 +1,6 @@
 from typing import Generator
 
-from database import ScopedSession
+from .database import ScopedSession
 
 
 def get_session() -> Generator:

@@ -5,8 +5,8 @@ import uvicorn
 from fastapi import Depends, FastAPI
 from sqlalchemy.orm import Session
 
-from config import settings
-from dependencies import get_session
+from .config import settings, BASE_PATH
+from .dependencies import get_session
 
 app = FastAPI(debug=settings.DEVELOPMENT)
 
@@ -21,7 +21,14 @@ def root(db: Session = Depends(get_session)):
 
 
 def run():
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=settings.DEVELOPMENT)
+    uvicorn.run(
+        "src.main:app",
+        host="elifeapi.test",
+        port=8080,
+        reload=settings.DEVELOPMENT,
+        ssl_keyfile= BASE_PATH / "elifeapi.test+2-key.pem",
+        ssl_certfile= BASE_PATH / "elifeapi.test+2.pem",
+    )
 
 
 if __name__ == "__main__":
